@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} base.html блоки:
+1. title - заголовок страницы
+2. head - дополнительные стили
+3. header - шапка сайта
+4. content - основное содержимое
+5. footer - подвал сайта
+6. scripts - дополнительные скрипты
+{% endcomment %}
+
+{% block title %}Главная{% endblock %}
+
+{% block head %}
+    <!-- Дополнительные стили можно подключить здесь -->
+{% endblock %}
+
+{% block header %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Consult</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <img src="{% static 'images/photo.jpeg' %}" class="img-fluid" alt="Владимир Монин">
+        </div>
+        <div class="col-md-6 col-12">
+            <h1>Добро пожаловать на мой сайт!</h1>
+            <p>Меня зовут Владимир Монин, и я рад приветствовать вас здесь. Уже 4 года я погружаюсь в удивительный мир программирования на Python, а более года преподаю этот язык в онлайн-академии TOP. За это время я помог сотням студентов и проверил тысячи домашних работ, что позволяет мне уверенно сказать: я точно смогу помочь вам и предложить эффективные решения.</p>
+            <h2>Чем я могу помочь?</h2>
+            <h3>Веб-разработка:</h3>
+            <ul>
+                <li>Верстка</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Взаимодействие с DOM</li>
+            </ul>
+            <h3>Программирование на Python:</h3>
+            <ul>
+                <li>Основы Python</li>
+                <li>Объектно-ориентированное программирование на Python</li>
+            </ul>
+            <h3>Автоматизация и тестирование:</h3>
+            <ul>
+                <li>Автоматизация тестирования на Python и Selenium</li>
+                <li>Парсинг данных</li>
+            </ul>
+            <h3>Работа с базами данных:</h3>
+            <ul>
+                <li>Реляционные базы данных (SQLite, PostgreSQL)</li>
+                <li>Взаимодействие Python с базами данных</li>
+            </ul>
+            <h3>Веб-фреймворки и деплой:</h3>
+            <ul>
+                <li>Django</li>
+                <li>Django REST Framework (DRF)</li>
+                <li>Deploy-приложения</li>
+                <li>Docker и Docker-контейнеры</li>
+            </ul>
+            <h3>Инструменты и технологии:</h3>
+            <ul>
+                <li>GitHub</li>
+                <li>GitHub Actions</li>
+                <li>Bootstrap</li>
+            </ul>
+            <p>Если вы ищете профессионала, который поможет вам разобраться с этими темами или продвинуть ваши навыки на новый уровень, то вы обратились по адресу. Я готов предоставить консультации и помочь вам с любыми вопросами, связанными с вышеуказанными направлениями.</p>
+            <p>Записаться на консультацию можно по форме ниже. Буду рад вам помочь!</p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            {% load crispy_forms_tags %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Записаться на консультацию</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="bg-light text-center py-3">
+    &copy; 2024 Владимир Монин. Все права защищены.
+</div>
+{% endblock %}
