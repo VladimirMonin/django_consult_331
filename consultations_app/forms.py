@@ -12,7 +12,7 @@ class ConsultationRequestForm(forms.ModelForm):
         super(ConsultationRequestForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Submit', css_class='btn btn-dark'))
+
 
     def clean(self):
         cleaned_data = super().clean()
@@ -21,4 +21,5 @@ class ConsultationRequestForm(forms.ModelForm):
         phone = cleaned_data.get('phone')
         if not email and not telegram_contact and not phone:
             raise forms.ValidationError('Необходимо ввести хотя бы один контакт: email, телефон или контакт в Telegram.')
+        # Тут мы можем внедрить свою логику. Данные очищены, и напрмер мы хотим отправить уведомление на почту
         return cleaned_data

@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Добавляем маршрут для главной страницы
     path('', HomeView.as_view(), name='home'),
-    path('', ThankYouView.as_view(), name='thank_you'),
+    path('thank-you/', ThankYouView.as_view(), name='thank_you'),
 ]
