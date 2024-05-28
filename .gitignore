@@ -3,3 +3,4 @@ db.sqlite3
 consultations_app/__pycache__/
 consultations/__pycache__/
 consultations_app/migrations/__pycache__/
+.env
