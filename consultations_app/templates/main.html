@@ -73,12 +73,13 @@
     </div>
     <div class="row mt-4">
         <div class="col-12">
-            {% load crispy_forms_tags %}
+            <p>Тут будет форма!</p>
+            {% comment %} {% load crispy_forms_tags %}
             <form method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-primary">Записаться на консультацию</button>
-            </form>
+            </form> {% endcomment %}
         </div>
     </div>
 </div>

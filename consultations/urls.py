@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from consultations_app.views import HomePageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Добавляем маршрут для главной страницы
+    path('', HomePageView.as_view(), name='home'),
 ]

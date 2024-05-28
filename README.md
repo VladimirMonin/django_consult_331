@@ -138,3 +138,25 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 ```
 **Заголовок**: `feat: добавил шаблоны`
+---
+
+**Описание**:
+### Тестовый запуск
+
+Создал View(TemplateView) для главной страницы сайта.
+Добавил URL-паттерн для главной страницы.
+
+Но мы получили TemplateDoesNotExist
+Необходимо внести в файл `settings.py` путь к папке с шаблонами.
+
+```python
+TEMPLATES = [
+    {
+        ...
+        'DIRS': [BASE_DIR / 'templates'],
+        ...
+    },
+]
+```
+
+**Заголовок**: `fix: исправил ошибку TemplateDoesNotExist`
