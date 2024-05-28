@@ -78,6 +78,7 @@
 Установили зависимости для проекта.
 `pip install django`
 `pip install django-crispy-forms`
+`pip install crispy-bootstrap5`
 `pip install python-telegram-bot`
 
 Сохранили их в файл `requirements.txt`.
@@ -160,3 +161,18 @@ TEMPLATES = [
 ```
 
 **Заголовок**: `fix: исправил ошибку TemplateDoesNotExist`
+---
+
+**Описание**:
+### Создание модели
+
+`ConsultationRequest` - модель для хранения информации о пользователях, записавшихся на консультацию.
+
+
+Пофиксил CryspyForm BS5
+Надо было установить еще один пакет и добавить его в INSTALLED_APPS
+Установил https://pypi.org/project/crispy-bootstrap5/
+`pip install crispy-bootstrap5`
+Добавил в INSTALLED_APPS `crispy_bootstrap5`
+
+**Заголовок**: `fix: исправил CryspyForm BS5 и добавил модель`

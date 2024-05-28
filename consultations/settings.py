@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Cryspy forms
     'crispy_forms',
+    'crispy_bootstrap5',
     'consultations_app',
 ]
 
